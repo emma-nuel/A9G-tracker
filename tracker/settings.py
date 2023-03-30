@@ -124,7 +124,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-if not DEBUG:
-    SECURE_SSL_REDIRECT = True
-else:
-    SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = False
