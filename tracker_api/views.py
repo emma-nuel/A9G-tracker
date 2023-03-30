@@ -6,12 +6,12 @@ from .serializer import MyTrackerDataSerializer
 from rest_framework.response import Response
 from rest_framework import status
 import json
+
 # Create your views here.
 class LocationData(APIView):
     def get(self, request, format=None):
         location  = MyTracker.objects.all().last()
         serializer = MyTrackerDataSerializer(location)
-        # return JsonResponse(serializer)
         return HttpResponse(json.dumps(serializer.data), content_type='application/json')
     
     def post(self, request, format=None):
